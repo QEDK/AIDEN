@@ -81,7 +81,7 @@ async function init(URLno) {
     var bel = document.getElementById("speech");
     bel.remove();
 
-    sequence.innerHTML = `<div class="scrollmenu">
+    document.getElementById("sequence").innerHTML = `<div class="scrollmenu">
     <a href="#BackBend" id="stretch1" >Back Bend</a>
     <a href="#Lunge" id="stretch2" >Lunge Rotate</a>
     <a href="#calf" id="stretch3" >Calf Tense</a>
@@ -94,7 +94,7 @@ async function init(URLno) {
   console.log("Hello World");
 
     if (URLno == 1) {
-        sequence.innerHTML = `<div class="scrollmenu">
+        document.getElementById("sequence").sequence.innerHTML = `<div class="scrollmenu">
     <a href="#BackBend" id="stretch1" >Back Bend</a>
     <a href="#Lunge" id="stretch1" >Lunge Rotate</a>
     <a href="#calf" id="stretch3" >Calf Tense</a>
