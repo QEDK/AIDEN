@@ -239,11 +239,7 @@ try {
     recognition.continuous = true;
     recognition.onresult = event => {
         let interimTranscript = "";
-        for (
-            let i = event.resultIndex, len = event.results.length;
-            i < len;
-            i++
-        ) {
+        for (let i = event.resultIndex, len = event.results.length;i < len;i++) {
             let transcript = event.results[i][0].transcript;
             if (transcript.includes("begin")) {
                 if (started) {
@@ -256,15 +252,30 @@ try {
             }
             if (event.results[i].isFinal) {
                 finalTranscript += transcript;
+                
             } else {
                 interimTranscript += transcript;
             }
+            console.log(finalTranscript);
+
+            if (transcript.includes("stop")) {
+                console.log("TMKC");
+                // recognition.abort();
+                // recognition.stop();
+                // recognition.getTracks().forEach(function(track) {
+                //     track.stop();
+                //     alert(track);
+                //   });
+                webcam.stop();
+                document.getElementById("Camera").style.visibility="hidden";
+            }
         }
-        speech.innerHTML =
-            '<i style="color:#ddd;">' + interimTranscript + "</>";
+        // speech.innerHTML =
+        //     '<i style="color:#ddd;">' + interimTranscript + "</>";
         // finalTranscript + '<i style="color:#ddd;">' + interimTranscript + "</>";
     };
     recognition.start();
+    started=true;
 } catch (err) {
     alert(
         "Unfortunately, this browser/OS combination is unsupported. For best results, use Google Chrome on Desktop or Android."
