@@ -169,9 +169,11 @@ async function predict() {
                             console.log(msg, "yeeepo");
                             var msg = new SpeechSynthesisUtterance(
                                 "Hold there for 10 seconds. Finished Back Bend"
+    
                             );
                             window.speechSynthesis.speak(msg);
-
+                            webcam.addMessage("                  ");
+                            web.processMessages();
                             flag = false;
                             console.log("start" + no_stretch);
                             document.getElementById(

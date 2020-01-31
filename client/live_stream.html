@@ -45,10 +45,12 @@
         <!-- FontAwesome -->
         <script src="https://kit.fontawesome.com/dbea95f351.js" crossorigin="anonymous"></script>
 
+        
+
         <!-- Tensorflow.js -->
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8.3/dist/teachablemachine-pose.min.js"></script>
-        <script src="./index.js"></script>
+        
 
         <style>
             .container {
@@ -149,6 +151,24 @@
                 </div>
             </div>
         </div>
+
+        <script type='text/javascript' src="https://www.botlibre.com/scripts/sdk.js"></script>
+        <script type='text/javascript'>
+            SDK.applicationId = "3194419546458234738";
+            var sdk = new SDKConnection();
+            var web = new WebAvatar();
+            web.connection = sdk;
+            web.avatar = "792824";
+            web.voice = "cmu-bdl-hsmm";
+            web.voiceMod = "default";
+            web.nativeVoice = true;
+            web.nativeVoiceName = "Daniel";
+            web.width = "300";
+            web.createBox();
+            web.addMessage("Welcome to my website", "Hello World", "", "");
+            web.processMessages();
+        </script>
+        <script src="./index.js"></script>
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script
