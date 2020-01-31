@@ -13,4 +13,7 @@ app.use(express.static('client'));
 const PORT = process.env.PORT || 8080;
 
 // App Listening
-app.listen(PORT, () => {});
+app.listen(PORT, () => {
+	console.log(`Server started at port ${PORT}`)
+});
+
