@@ -91,6 +91,8 @@ async function init(URLno) {
     <a href="#base">Chest Expand</a>
   </div>`;
 
+  console.log("Hello World");
+
     if (URLno == 1) {
         sequence.innerHTML = `<div class="scrollmenu">
     <a href="#BackBend" id="stretch1" >Back Bend</a>
