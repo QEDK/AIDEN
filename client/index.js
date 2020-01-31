@@ -241,7 +241,7 @@ try {
         let interimTranscript = "";
         for (let i = event.resultIndex, len = event.results.length;i < len;i++) {
             let transcript = event.results[i][0].transcript;
-            if (transcript.includes("begin")) {
+            if (transcript.includes("begin")||transcript.toLowerCase().includes("shuru")) {
                 if (started) {
                     started = false;
                     init(0);
@@ -258,7 +258,7 @@ try {
             }
             console.log(finalTranscript);
 
-            if (transcript.includes("stop")) {
+            if (transcript.includes("stop")|| transcript.includes("ruk ja")) {
                 console.log("TMKC");
                 // recognition.abort();
                 // recognition.stop();
@@ -269,6 +269,7 @@ try {
                 webcam.stop();
                 document.getElementById("Camera").style.visibility="hidden";
             }
+
         }
         // speech.innerHTML =
         //     '<i style="color:#ddd;">' + interimTranscript + "</>";
