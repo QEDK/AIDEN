@@ -2,12 +2,12 @@
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
 
 // the link to your model provided by Teachable Machine export panel
-// const URL2 = "https://teachablemachine.withgoogle.com/models/9o5NXD5r/"; // Lunge
-const URL2 = "https://aiden.blob.core.windows.net/aidenmodels/"; // 2.0 lunge
+const URL2 = "https://teachablemachine.withgoogle.com/models/9o5NXD5r/"; // Lunge
+// const URL2 = "https://aiden.blob.core.windows.net/aidenmodels/"; // 2.0 lunge
 
-// const URL1 = "https://teachablemachine.withgoogle.com/models/nFctljBl/"; // Back bend
+const URL1 = "https://teachablemachine.withgoogle.com/models/nFctljBl/"; // Back bend
 // const URL1 = "https://teachablemachine.withgoogle.com/models/w_q11QNp/"; // DEMO
-const URL1 = "https://aiden.blob.core.windows.net/aidenmodels/"; // 2.0 metadata.json
+// const URL1 = "https://aiden.blob.core.windows.net/aidenmodels/"; // 2.0 metadata.json
 let model, model2, webcam, ctx, labelContainer, maxPredictions;
 
 var bar_colours = [
@@ -61,14 +61,18 @@ async function init(URLno) {
         // and class labels
         labelContainer.appendChild(document.createElement("div"));
     }
-    var startmsg = new SpeechSynthesisUtterance(
-        "Starting Your Exercises. Beginning with Back Bend Stretch"
-    );
+    // var startmsg = new SpeechSynthesisUtterance(
+    //       "Starting Your Exercises. Beginning with Back Bend Stretch"
+    // );
+    web.addMessage("Starting Your Exercises. Beginning with Back Bend Stretch");
+    web.processMessages();
 
     if (URLno == 1) {
-        startmsg = new SpeechSynthesisUtterance(
-            "Second Exercise. Lunge Rotate Stretch"
-        );
+        // startmsg = new SpeechSynthesisUtterance(
+        //     "Second Exercise. Lunge Rotate Stretch"
+        // );
+        web.addMessage("Second Exercise. Lunge Rotate Stretch");
+    web.processMessages();
     }
     window.speechSynthesis.speak(startmsg);
 
@@ -160,19 +164,25 @@ async function predict() {
                         footer.innerHTML = "Status: " + prediction[i].className;
 
                         lastCall = prediction[i].className;
-                        var msg = new SpeechSynthesisUtterance(
-                            prediction[i].className
-                        );
-                        window.speechSynthesis.speak(msg);
+                        // var msg = new SpeechSynthesisUtterance(
+                        //     prediction[i].className
+                        // );
+                        web.addMessage(prediction[i].className);
+                        console.log(prediction[i].className)
+                            web.processMessages();
+
+                        // window.speechSynthesis.speak(msg);
                     } else {
                         if (no_stretch == 1 && lastCall == "Correct Bend") {
                             console.log(msg, "yeeepo");
-                            var msg = new SpeechSynthesisUtterance(
-                                "Hold there for 10 seconds. Finished Back Bend"
+                            // var msg = new SpeechSynthesisUtterance(
+                            //     "Hold there for 10 seconds. Finished Back Bend"
     
-                            );
-                            window.speechSynthesis.speak(msg);
-                            webcam.addMessage("                  ");
+                            // );
+                            
+
+                            // window.speechSynthesis.speak(msg);
+                            web.addMessage("Hold there for 10 seconds. Finished Back Bend");
                             web.processMessages();
                             flag = false;
                             console.log("start" + no_stretch);
