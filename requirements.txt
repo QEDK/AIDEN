@@ -1,4 +1,4 @@
 azure
 azure-cognitiveservices-speech
-.DS_Store/
+flask
 
