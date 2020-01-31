@@ -126,7 +126,7 @@ async function predict() {
 
     for (let i = 0; i < maxPredictions; i++) {
         prediction[i].className =
-            prediction[i].className == "Kness too bent"
+            prediction[i].className == "Knees too bent"
                 ? "Knees Too Bent"
                 : prediction[i].className;
         const classPrediction =
@@ -179,9 +179,9 @@ async function predict() {
                             console.log(msg, "yeeepo");
                             var msg = new SpeechSynthesisUtterance(
                                 "."
-    
+
                             );
-                            
+
 
                             // window.speechSynthesis.speak(msg);
                             web.addMessage("Hold there for 10 seconds. Finished Back Bend");
