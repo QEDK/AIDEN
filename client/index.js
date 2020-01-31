@@ -68,9 +68,9 @@ async function init(URLno) {
     web.processMessages();
 
     if (URLno == 1) {
-        // startmsg = new SpeechSynthesisUtterance(
-        //     "Second Exercise. Lunge Rotate Stretch"
-        // );
+        startmsg = new SpeechSynthesisUtterance(
+            "."
+        );
         web.addMessage("Second Exercise. Lunge Rotate Stretch");
     web.processMessages();
     }
@@ -164,9 +164,9 @@ async function predict() {
                         footer.innerHTML = "Status: " + prediction[i].className;
 
                         lastCall = prediction[i].className;
-                        // var msg = new SpeechSynthesisUtterance(
-                        //     prediction[i].className
-                        // );
+                        var msg = new SpeechSynthesisUtterance(
+                            prediction[i].className
+                        );
                         web.addMessage(prediction[i].className);
                         console.log(prediction[i].className)
                             web.processMessages();
@@ -175,10 +175,10 @@ async function predict() {
                     } else {
                         if (no_stretch == 1 && lastCall == "Correct Bend") {
                             console.log(msg, "yeeepo");
-                            // var msg = new SpeechSynthesisUtterance(
-                            //     "Hold there for 10 seconds. Finished Back Bend"
+                            var msg = new SpeechSynthesisUtterance(
+                                "."
     
-                            // );
+                            );
                             
 
                             // window.speechSynthesis.speak(msg);
@@ -283,9 +283,9 @@ try {
             }
 
         }
-        // speech.innerHTML =
-        //     '<i style="color:#ddd;">' + interimTranscript + "</>";
-        // finalTranscript + '<i style="color:#ddd;">' + interimTranscript + "</>";
+        speech.innerHTML =
+            '<i style="color:#ddd;">' + interimTranscript + "</>";
+        finalTranscript + '<i style="color:#ddd;">' + interimTranscript + "</>";
     };
     recognition.start();
     started=true;
