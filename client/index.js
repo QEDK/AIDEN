@@ -284,6 +284,17 @@ try {
                 document.getElementById("Camera").style.visibility="hidden";
             }
 
+
+            if (transcript.includes("leaderboard")) {
+                // recognition.abort();
+                // recognition.stop();
+                // recognition.getTracks().forEach(function(track) {
+                //     track.stop();
+                //     alert(track);
+                //   });
+                window.location.href = "/leaderboard.html";
+            }
+
         }
         speech.innerHTML =
             '<i style="color:#ddd;">' + interimTranscript + "</>";
