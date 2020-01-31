@@ -245,12 +245,12 @@ try {
             i++
         ) {
             let transcript = event.results[i][0].transcript;
-            if (transcript.includes("start exercises")) {
+            if (transcript.includes("begin")) {
                 if (started) {
                     started = false;
                     init(0);
 
-                    console.log("Start Exercises");
+                    console.log("Begin exercises");
                     // Removes the div with the 'div-02' id}}
                 }
             }
@@ -267,6 +267,6 @@ try {
     recognition.start();
 } catch (err) {
     alert(
-        "Unfortunatley this Browser/OS combination is unsupported. For best results use Google Chrome on Desktop or Android"
+        "Unfortunately, this browser/OS combination is unsupported. For best results, use Google Chrome on Desktop or Android."
     );
 }
