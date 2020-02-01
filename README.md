@@ -11,12 +11,6 @@
 
 AIDEN makes it easier for users to not only complete but to improve their techniques independently.
 
-## How to install and use AIDEN
-
--   Install and Starting Instructions
--   In command prompt use npm i 
--   Open `localhost://8080` in web browser
-
 ## How to use AIDEN
 
 -   Allow browser access to microphone and camera
