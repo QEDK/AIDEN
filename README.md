@@ -40,7 +40,7 @@ Key Azure Services that have been used in our product:
 - Azure CLI  ( for deployment)
 - Azure Cloud Shell (for web app continuous deployment integration)
 - Azure Pipelines (Continuous deployment feature)
-- Visual Studio Code ( for all our life <#)
+- Visual Studio Code ( for all our life <3)
 
 
 ## Supportability
